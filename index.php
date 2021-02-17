@@ -211,7 +211,7 @@ public function update_kave($id, $kave_neve,$kave_ar, $kave_tejese, $kave_leiras
             leiras = '$kave_leirasa'
           WHERE 
             id = $id";
-  var_dump($this->sql);
+  //var_dump($this->sql);
   if ($this->conn->query($this->sql)){
     echo "<p>Sikeres adatmódosítás!</p>";
   } else {
@@ -239,15 +239,38 @@ public function kave_torles($id){
 <br>
 <br>
 
-<div class="input-group mb-3">
-<form method="POST">
 
-Név: 	<input type='text'  class="form-control" name='input_kave_name'><br />
-Ár: <input type='number'  class="form-control" name='input_kave_price'><br />
-Van-e benne tej (1 ha igen, 0 ha nem): <input type='number' name='input_kave_milk' class="form-control"><br />
-Leiras: <br /><textarea name='input_kave_content'  class="form-control"></textarea><br />
-<input type='hidden' name='action' value='cmd_insert_kave'>
-<input type='submit' value='Felvétel'>
+<h1>Kávé felvétel</h1>
+<div  class="input-group mb-3" >
+<form class="row g-3 needs-validation" method="POST">
+
+  <div class="col-md-4">
+  Név: 	<input type='text'  class="form-control" name='input_kave_name' required>
+    <div class="invalid-feedback">
+    A név megadása kötelező
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  Ár: <input type='number'  class="form-control" name='input_kave_price' required>
+    <div class="invalid-feedback">
+    Az ár megadása kötelező-
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  Van-e benne tej (1 ha igen, 0 ha nem): <input type='number' name='input_kave_milk' class="form-control">
+  </div>
+
+  <div class="col-md-10">
+  Leiras: <br /><textarea name='input_kave_content'  class="form-control"></textarea><br />
+  </div>
+  
+  <input type='hidden' name='action' value='cmd_insert_kave'>
+  
+  <div class="col-12">
+  <input type='submit' value='Felvétel' class='btn btn-success'>  
+  </div>
 </form>
 </div>
 
