@@ -1,0 +1,5 @@
+https://codewithawa.com/posts/ajax-crud-%5Bcreate-update-delete%5D-with-php-and-mysql-database
+
+0. adatbázis létrehozása, tábla létrehozása (, esetleg mintaadatokkal feltöltés)
+1. fájlok létrehozása, kódrészletek bemásolása
+2. jquery probléma megoldása
